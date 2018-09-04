@@ -1,0 +1,21 @@
+<title>Menu</title>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#!/main-employee">Ticket System Tech </a>
+    <a class="navbar-dark"> Usuario: {{vm.user.name}} - {{vm.user.type}} </a>
+        <a href="#!/login" style="margin-left: 800px" class="btn btn-secondary">Logout</a>
+    </div>
+</nav>
+<div class="row display-table-row">
+    <div class="col-md-2 col-sm-2 hidden-xs display-table-cell v-align box" id="navigation" style="background-color: rgb(61, 60, 60)">
+        <li class="navbar-dark">
+            <class="nav-item active">
+                <a class="btn btn-secondary btn-block" href="#!/main-employee" style="margin-left: 7px">Home</a>
+                <li class="nav-item">
+                    <a class="btn btn-secondary btn-block" href="#!/main-employee/workflow-employee" style="margin-left: 7px">Workflow</a>
+                    <br>
+                </li>
+    </div>
+    <div class="col-md-10 col-sm-11 display-table-cell v-align">
+        <div class="jumbotron">
+            <ui-view></ui-view>
+        </div>

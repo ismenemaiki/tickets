@@ -1,0 +1,1 @@
+angular.module('ticketSystem', ['ui.router', 'LocalStorageModule']);

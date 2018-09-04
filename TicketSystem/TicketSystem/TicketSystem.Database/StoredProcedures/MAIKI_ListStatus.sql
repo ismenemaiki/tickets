@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[MAIKI_ListStatus]
+
+AS
+	SELECT * FROM  MAIKI_status

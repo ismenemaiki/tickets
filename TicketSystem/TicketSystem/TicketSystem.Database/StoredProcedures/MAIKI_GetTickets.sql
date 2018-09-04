@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[MAIKI_GetTickets]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)

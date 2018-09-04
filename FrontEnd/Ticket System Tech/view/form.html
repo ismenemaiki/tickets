@@ -1,0 +1,15 @@
+<h2 class="display-4" style="margin-left: 15px">Add new Ticket</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">Form input
+        <div class="form-group">
+            <label class="col-form-label col-form-label-lg">Subject</label>
+            <input class="form-control form-control-lg" type="text" placeholder="Insert a subject" ng-model="vm.subject">
+            <label for="textarea">Description</label>
+            <textarea class="form-control" id="textarea" rows="3" style="margin-top: 5px; margin-bottom: 0px; height: 260px;" ng-model="vm.description"
+                placeholder="Insert an description for your problem"></textarea>
+        </div>
+        <button class="btn btn-primary block" ng-click="vm.addTicket(vm.subject, vm.description)">Send</button>
+        <a href="#!/main-employee/workflow-employee" class="btn btn-danger block">Cancel</a>
+        <br>
+    </div>
+</div>

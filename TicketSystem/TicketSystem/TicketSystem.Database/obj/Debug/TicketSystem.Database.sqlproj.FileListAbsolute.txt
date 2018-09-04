@@ -1,0 +1,10 @@
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\bin\Debug\TicketSystem.Database.dacpac
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\bin\Debug\TicketSystem.Database.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\bin\Debug\TicketSystem.Database.pdb
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\Model.xml
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\refactor.xml
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\postdeploy.sql
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\predeploy.sql
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\TicketSystem.Database.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\TicketSystem.Database.pdb
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\TicketSystem.Database.sqlprojResolveAssemblyReference.cache

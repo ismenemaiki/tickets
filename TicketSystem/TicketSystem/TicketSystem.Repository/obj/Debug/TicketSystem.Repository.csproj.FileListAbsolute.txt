@@ -1,0 +1,14 @@
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\obj\Debug\TicketSystem.Repository.csprojResolveAssemblyReference.cache
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\obj\Debug\TicketSystem.Repository.csproj.CoreCompileInputs.cache
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\TicketSystem.Repository.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\TicketSystem.Repository.pdb
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\Calmo.Core.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\Calmo.Data.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\Calmo.Data.SQLServer.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\Dapper.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\TicketSystem.Domain.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\TicketSystem.Domain.pdb
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\bin\Debug\Dapper.xml
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\obj\Debug\TicketSystem.Repository.csproj.CopyComplete
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\obj\Debug\TicketSystem.Repository.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Repository\obj\Debug\TicketSystem.Repository.pdb

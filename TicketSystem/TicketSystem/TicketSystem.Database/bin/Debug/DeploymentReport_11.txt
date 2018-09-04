@@ -1,0 +1,33 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[MAIKI_tickets]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[MAIKI_tickets].[attendantId] is being dropped, data loss could occur.
+       The column [dbo].[MAIKI_tickets].[employeeId] is being dropped, data loss could occur.
+       The column [dbo].[MAIKI_tickets].[statusId] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+     Table rebuild
+       [dbo].[MAIKI_tickets] (Table)
+     Create
+       [dbo].[FK_MAIKI_tickets_MAIKI_tickets] (Foreign Key)
+     Alter
+       [dbo].[MAIKI_InsertTicket] (Procedure)
+       [dbo].[MAIKI_listTickets] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[MAIKI_GetTicketsLikeSubject] (Procedure)
+
+The column [dbo].[MAIKI_tickets].[attendantId] is being dropped, data loss could occur.
+The column [dbo].[MAIKI_tickets].[employeeId] is being dropped, data loss could occur.
+The column [dbo].[MAIKI_tickets].[statusId] is being dropped, data loss could occur.
+

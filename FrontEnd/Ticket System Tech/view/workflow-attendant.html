@@ -1,0 +1,53 @@
+<h2 class="display-4" style="margin-left: 15px">Workflow</h2>{{loggerUser}}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-heading panel-block">{{loggerUser.name}}
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-info">Filter for Status</button>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop3" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a class="dropdown-item" ng-click="vm.statusAll()" href=""> All</a>
+                    <a class="dropdown-item" ng-click="vm.statusNew()" href="">New </a>
+                    <a class="dropdown-item" ng-click="vm.statusInProgress()" href=""> In Progress</a>
+                    <a class="dropdown-item" ng-click="vm.statusFinished()" href=""> Finished</a>
+                    </div>
+                </div>
+            </div>            
+            <input class="default-input" ng-model="vm.search" type="text" placeholder="Search for ticket" id="search" style="float:right;">
+            <br>
+        </div>
+    </div>
+    <div class="panel-body" id="workflow">
+        <table type="text" class="table table-striped">
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>Subject</th>
+                <th>Attendant</th>
+                <th>Employee</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Date openness</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat="ticket in tickets| filter: vm.search">
+                <!--TROCAR PELO DIR-PAGINATE-->
+                <td></td>
+                <td>{{ticket.id}}</td>
+                <td>{{ticket.subject}}</td>
+                <td>{{ticket.attendant.name}}</td>
+                <td>{{ticket.employee.name}}</td>
+                <td>{{ticket.description}}</td>
+                <td>{{ticket.status.state}}</td>
+                <td>{{ticket.openness | date: 'dd/MM/yy HH:mm'}}</td>
+                <td>
+                    <p>
+                        <a ng-click="vm.goDetailsAttendant(ticket.id)">
+                            <i class="fa fa-pencil-square"></i>
+                        </a>
+                    </p>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[MAIKI_Attendant]
+(
+	[id] BIGINT NOT NULL, 
+    [name] VARCHAR(40) NULL,
+	PRIMARY KEY CLUSTERED ([id] ASC)
+)

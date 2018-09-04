@@ -1,0 +1,21 @@
+<h2 class="display-4" style="margin-left: 15px">Ticket details </h2>
+<div class="panel panel-default">
+    <div style="margin-left: 100px; margin-right: 100px">
+        <fieldset disabled="">
+            <label class="control-label" for="disabledInput">ID</label>
+            <input class="form-control  form-control-sm" disabled="" ng-model="vm.ticket.id">
+        </fieldset>
+        <fieldset disabled="">
+            <label class="control-label" for="disabledInput">Employee</label>
+            <input class="form-control  form-control-sm" disabled="" ng-model="vm.ticket.employee.name">
+        </fieldset>
+        <label class="control-label" for="disabledInput">Subject</label>
+        <input class="form-control" ng-model="vm.ticket.subject">
+        <label class="control-label" for="disabledInput">Description</label>
+        <textarea class="form-control" ng-model="vm.ticket.description"></textarea>
+        <br>
+        <button class="btn btn-primary block" ng-click="vm.save(vm.ticket)">Save</button>
+        <a href="#!/main-employee/workflow-employee" class="btn btn-danger block">Cancel</a>
+        <a ng-click="vm.reOpen(vm.ticket)" class="btn btn-secondary" ng-show="vm.ticket.status.state=='Finished'">Re-Open</a>
+    </div>
+</div>

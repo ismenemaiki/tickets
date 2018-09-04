@@ -1,0 +1,44 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[MAIKI_status]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column id in table [dbo].[MAIKI_status] is currently  BIGINT NOT NULL but is being changed to  INT NOT
+         NULL. Data loss could occur.
+       The type for column attendantId in table [dbo].[MAIKI_tickets] is currently  BIGINT NULL but is being changed to  INT
+         NULL. Data loss could occur.
+       The type for column employeeId in table [dbo].[MAIKI_tickets] is currently  BIGINT NULL but is being changed to  INT
+         NULL. Data loss could occur.
+       The type for column statusId in table [dbo].[MAIKI_tickets] is currently  BIGINT NULL but is being changed to  INT NULL.
+         Data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+     Table rebuild
+       [dbo].[MAIKI_status] (Table)
+     Alter
+       [dbo].[MAIKI_tickets] (Table)
+       [dbo].[MAIKI_InsertTicket] (Procedure)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+     Refresh
+       [dbo].[MAIKI_listTickets] (Procedure)
+       [dbo].[MAIKI_GetTicketsLikeSubject] (Procedure)
+
+The type for column id in table [dbo].[MAIKI_status] is currently  BIGINT NOT NULL but is being changed to  INT NOT NULL. Data loss could occur.
+The type for column attendantId in table [dbo].[MAIKI_tickets] is currently  BIGINT NULL but is being changed to  INT NULL. Data loss could occur.
+The type for column employeeId in table [dbo].[MAIKI_tickets] is currently  BIGINT NULL but is being changed to  INT NULL. Data loss could occur.
+The type for column statusId in table [dbo].[MAIKI_tickets] is currently  BIGINT NULL but is being changed to  INT NULL. Data loss could occur.
+

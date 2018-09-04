@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="TicketSystem.Database.dll" />
+			<Metadata Name="FileName" Value="C:\PROJETOS\JUVENTUDEAPI\TICKETSYSTEM\TICKETSYSTEM\TICKETSYSTEM.DATABASE\OBJ\DEBUG\TICKETSYSTEM.DATABASE.DLL" />
+			<Metadata Name="AssemblyName" Value="TicketSystem.Database" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Database\obj\Debug\TicketSystem.Database.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[MAIKI_status]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[MAIKI_tickets].[id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[MAIKI_status].[id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[MAIKI_status]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[User].[id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetUser]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [id] as [Id],
+		   [name] as [Name],
+		   [type] as [Type]
+
+    FROM [User]
+
+	WHERE [password] = @password 
+	  AND [username] = @username]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[type]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[password]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetUser].[@password]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[username]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetUser].[@username]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetUser].[@username]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetUser].[@password]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="40" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="239" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetUser]&#xD;&#xA;&#x9;@username VARCHAR(30),&#xD;&#xA;&#x9;@password VARCHAR(40)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_DeleteTicket]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE  FROM MAIKI_tickets WHERE id = @id]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_DeleteTicket].[@id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_DeleteTicket].[@id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="101" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MAIKI_DeleteTicket]&#xD;&#xA;&#x9;@id int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_GetTicketById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT 
+		Ti.id as 'Id',
+		Ti.[subject] as 'Subject',
+		Ti.attendantId as 'AttendantId',
+		Ti.employeeId as 'EmployeeId',
+		A.[name] as attendantName,
+		E.[name] as employeeName,
+		Ti.[description] as 'Description',
+		Ti.openness as 'Openness',
+		St.id as statusId,
+		St.[state] as [state]
+		FROM MAIKI_tickets as Ti
+		INNER JOIN MAIKI_status as St ON (Ti.statusId = St.id)
+		INNER JOIN [User] as E ON E.id = Ti.employeeId 
+		INNER JOIN [User] as A ON A.id = Ti.attendantId
+		WHERE Ti.id = @id]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[attendantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[attendantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[openness]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[state]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_GetTicketById].[@id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_GetTicketById].[@id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="569" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MAIKI_GetTicketById]&#xD;&#xA;&#x9;@id INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_InsertTicket]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	
+	INSERT INTO [dbo].MAIKI_tickets 
+	([subject],
+	employeeId,
+	attendantId,
+	[description], 
+	openness, 
+	statusId)
+
+	VALUES 
+	(@subject,
+	@attendantId,
+	@employeeId, 
+	@description,
+	@openness,
+	@statusId 
+	)
+
+SELECT @@IDENTITY]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[attendantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[openness]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_InsertTicket].[@subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_InsertTicket].[@attendantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_InsertTicket].[@employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_InsertTicket].[@description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_InsertTicket].[@openness]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_InsertTicket].[@statusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_InsertTicket].[@subject]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_InsertTicket].[@employeeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_InsertTicket].[@attendantId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_InsertTicket].[@description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_InsertTicket].[@openness]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_InsertTicket].[@statusId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="434" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE PROCEDURE [dbo].MAIKI_InsertTicket&#xD;&#xA;&#x9;@subject VARCHAR(50),&#xD;&#xA;&#x9;@employeeId BIGINT,&#xD;&#xA;&#x9;@attendantId BIGINT,&#xD;&#xA;&#x9;@description VARCHAR(500),&#xD;&#xA;&#x9;@openness DATETIME,&#xD;&#xA;&#x9;@statusId BIGINT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_ListByStatus]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT 
+		Ti.id as id,
+		Ti.[subject] as [subject],
+		A.[name] as attendantName,
+		e.[name] as employeeName,
+		Ti.[description] as [description],
+		St.id as [statusId],
+		St.[state] as [state],
+		Ti.openness as openness
+		FROM MAIKI_tickets as Ti
+		INNER JOIN MAIKI_status as St ON (Ti.statusId = St.id)
+		INNER JOIN [User] as E ON E.id = Ti.employeeId 
+		INNER JOIN [User] as A ON A.id = Ti.attendantId
+
+	WHERE statusId = @statusId
+RETURN]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[attendantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[state]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[openness]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_ListByStatus].[@statusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_ListByStatus].[@statusId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="515" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE MAIKI_ListByStatus&#xD;&#xA;&#x9;@statusId bigint&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_ListStatus]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT * FROM  MAIKI_status]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_status]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="77" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MAIKI_ListStatus]&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_ListTickets]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+
+SELECT
+		Ti.id as id,
+		Ti.[subject] as [subject],
+		A.[name] as attendantName,
+		e.[name] as employeeName,
+		Ti.[description] as [description],
+		St.id as [statusId],
+		St.[state] as [state],
+		Ti.openness as openness
+		FROM MAIKI_tickets as Ti
+		INNER JOIN MAIKI_status as St ON (Ti.statusId = St.id)
+		INNER JOIN [User] as E ON E.id = Ti.employeeId 
+		INNER JOIN [User] as A ON A.id = Ti.attendantId]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[attendantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_status].[state]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[openness]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="467" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MAIKI_ListTickets]&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[MAIKI_status]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_status].[id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_status].[state]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[MAIKI_tickets]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[subject]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[attendantId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[employeeId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[statusId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[MAIKI_tickets].[openness]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+			<AttachedAnnotation Disambiguator="3" />
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[MAIKI_UpdateTicket]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	
+UPDATE [dbo].[MAIKI_tickets] 
+	SET
+		[subject] = @Subject, 
+		[description] = @Description,
+		employeeId = @employeeId,
+		[statusId] = @StatusId,
+		openness = @openness
+		WHERE id = @id;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_UpdateTicket].[@Subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_UpdateTicket].[@Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_UpdateTicket].[@employeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[statusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_UpdateTicket].[@StatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[openness]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_UpdateTicket].[@openness]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_tickets].[id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[MAIKI_UpdateTicket].[@id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_UpdateTicket].[@id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_UpdateTicket].[@Subject]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_UpdateTicket].[@Description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_UpdateTicket].[@employeeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_UpdateTicket].[@StatusId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[MAIKI_UpdateTicket].[@openness]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="376" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MAIKI_UpdateTicket]&#xD;&#xA;&#x9;@id BIGINT,&#xD;&#xA;&#x9;@Subject VARCHAR (50),&#xD;&#xA;&#x9;@Description VARCHAR(500),&#xD;&#xA;&#x9;@employeeId BIGINT,&#xD;&#xA;&#x9;@StatusId BIGINT,&#xD;&#xA;&#x9;@openness DATETIME&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[User]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="7" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="25" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[username]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[password]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="40" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[type]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+	</Model>
+</DataSchemaModel>

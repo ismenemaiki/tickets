@@ -1,0 +1,8 @@
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\bin\Debug\TicketSystem.Domain.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\bin\Debug\TicketSystem.Domain.pdb
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\bin\Debug\Calmo.Core.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\obj\Debug\TicketSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\obj\Debug\TicketSystem.Domain.csproj.CopyComplete
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\obj\Debug\TicketSystem.Domain.dll
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\obj\Debug\TicketSystem.Domain.pdb
+C:\Projetos\JuventudeAPI\TicketSystem\TicketSystem\TicketSystem.Domain\obj\Debug\TicketSystem.Domain.csprojResolveAssemblyReference.cache

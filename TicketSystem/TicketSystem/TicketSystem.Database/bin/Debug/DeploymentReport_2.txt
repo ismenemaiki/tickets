@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[MAIKI_tickets]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[MAIKI_tickets] (Foreign Key)
+     Table rebuild
+       [dbo].[MAIKI_tickets] (Table)
+     Create
+       [dbo].[FK_MAIKI_tickets_MAIKI_tickets] (Foreign Key)
+       [dbo].[MAIKI_InsertTicket] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[MAIKI_GetTicketsLikeSubject] (Procedure)
+       [dbo].[MAIKI_listTickets] (Procedure)
